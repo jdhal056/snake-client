@@ -14,12 +14,19 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log(data);
   });
+  // let interval;
   // prints connect message when connection is established
   conn.on('connect', (data) => {
     console.log("Sucessfully connected to the game server.");
     conn.write('Name: JSD');
+    // interval = setInterval(() => {
+    //   conn.write('Move: up')
+    // },500);
   }); 
-
+  // conn.on('error', () => {
+  //   console.log("quit");
+  //   clearTimeout(interval);
+  // });
   return conn;
 };
 
